@@ -43,7 +43,7 @@
                       <input class="form-control" name="card_month" type="tel" placeholder="card month">
                       <input class="form-control" name="card_year" type="tel" placeholder="card year">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <select name="plan">
+                      <select name="plan" class="form-control">
                         @foreach($plans as $plan)
                         <option value="{{$plan->id}}">{{$plan->name}} - {{money_format(" $%i", floatval(str_replace(',','',$plan->amount/100)))}}</option>
                         @endforeach
